@@ -8,6 +8,9 @@ class Student
     @id = id
   end
 
+  # <-- class methods
+  
+  # create or drop table
   def self.create_table
     sql = <<-SQL
           CREATE TABLE IF NOT EXISTS students
@@ -21,6 +24,16 @@ class Student
     DB[:conn].execute(sql)
   end
 
+  # find by name 
+  def self.find_by_name(name)
+    sql = <<-SQL
+          SELECT * FROM students
+          WHERE name = ?
+          SQL
+    DB[:conn].execute(sql, name)
+  end 
+  
+  # <-- instance methods
   def save
     if self.id != nil
       self.update
