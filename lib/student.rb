@@ -32,6 +32,11 @@ class Student
           SQL
     DB[:conn].execute(sql, name)
   end 
+
+  # create instances
+  def self.create(name, grade)
+    Student.new(name, grade)
+  end
   
   # <-- instance methods
   def save
