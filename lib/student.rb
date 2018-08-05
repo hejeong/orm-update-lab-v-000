@@ -9,7 +9,7 @@ class Student
   end
 
   # <-- class methods
-  
+
   # create or drop table
   def self.create_table
     sql = <<-SQL
@@ -24,20 +24,20 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  # find by name 
+  # find by name
   def self.find_by_name(name)
     sql = <<-SQL
           SELECT * FROM students
           WHERE name = ?
           SQL
     DB[:conn].execute(sql, name)
-  end 
+  end
 
   # create instances
   def self.create(name, grade)
-    Student.new(name, grade)
+    new_student =Student.new(name, grade)
   end
-  
+
   # <-- instance methods
   def save
     if self.id != nil
