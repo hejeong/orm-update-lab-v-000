@@ -31,7 +31,7 @@ class Student
           WHERE name = ?
           SQL
     array_with_data = DB[:conn].execute(sql, name)
-
+    self.new_from_db(array_with_data)
   end
 
   # create instances
