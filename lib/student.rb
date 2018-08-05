@@ -40,6 +40,11 @@ class Student
     new_student
   end
 
+  # retrieve data from database
+  def self.new_from_db(row)
+    Student.new(row[2], row[1], row[0])
+  end
+
   # <-- instance methods
   def save
     if self.id != nil
