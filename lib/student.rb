@@ -35,7 +35,7 @@ class Student
 
   # create instances
   def self.create(name, grade)
-    new_student =Student.new(name, grade)
+    new_student = Student.new(name, grade)
   end
 
   # <-- instance methods
